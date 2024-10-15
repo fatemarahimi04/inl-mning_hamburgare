@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Köksvy</title>
+</head>
+<body>
+    <h1>Beställningar</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Produktnamn</th>
+                <th>Pris</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.name }}</td>
+                <td>{{ order.price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

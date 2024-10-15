@@ -1,12 +1,21 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
-kitchen_app = Flask(__name__)
+app = Flask(__name__)
 
-@kitchen_app.route('/kitchen', methods=['POST'])
-def receive_order():
+orders = []
+
+@app.route('/order', methods=['POST'])
+def place_order():
     order = request.get_json()
-    print("Ny beställning mottagen:", order)
-    return "Beställning mottagen", 200
+    print("Mottagen beställning:", order)  
+    orders.append(order) 
+    return "Order mottagen", 200
 
-if __name__ == '__main__':
-    kitchen_app.run(port=5001, debug=True)
+
+@app.route('/')
+def kitchen_view():
+    print("Aktuella beställningar:", orders) 
+    return render_template('kitchen.html', orders=orders)
+
+if __name__ == "__main__":
+    app.run(debug=True, port=5001)

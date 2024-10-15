@@ -12,75 +12,111 @@
             padding: 20px;
         }
         header {
-            background-color: #f671dd;
+            background-color: #ff5722;
             color: #fff;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         h1 {
             margin: 0;
+            font-size: 2.5rem;
+        }
+        h3 {
+            margin-top: 5px;
+            font-weight: 300;
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
+            max-width: 900px;
+            margin: 40px auto;
             background-color: #fff;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
         .burger-menu {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
         .burger-menu li {
-            margin: 15px 0;
-            padding: 15px;
-            background-color: #eee;
-            border-radius: 8px;
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+        }
+        .burger-menu li span {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .burger-menu li small {
+            display: block;
+            margin-top: 5px;
+            color: #555;
+            font-style: italic;
         }
         button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
+            padding: 10px 25px;
+            background-color: #ff5722;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 1rem;
         }
         button:hover {
-            background-color: #45a049;
+            background-color: #e64a19;
         }
         footer {
             text-align: center;
-            padding: 10px;
-            margin-top: 20px;
+            padding: 20px;
+            margin-top: 40px;
             background-color: #333;
             color: white;
         }
     </style>
+    <script>
+        function placeOrder(itemName, itemPrice) {
+            const order = {
+                name: itemName,
+                price: itemPrice
+            };
+
+            fetch('/order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(order)
+            })
+            .then(response => response.json())
+            .then(data => alert(data.message))
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
 </head>
 <body>
 
 <header>
     <h1>Välkommen till DEVIL BURGER</h1>
-    <h3>Det är bara beställa och NJUTA</h3>
+    <h3>Beställ din dröm-burgare och NJUT!</h3>
 </header>
 
 <div class="container">
     <h2>Meny</h2>
     <ul class="burger-menu">
+        <!-- Loopar genom menyposterna -->
+        {% for item in menu_items %}
         <li>
-            <span>DemureChicken - 85kr</span>
-            <button>Beställ</button>
+            <span>{{ item[1] }} - {{ item[2] }}kr</span>
+            <small>{{ item[3] }}</small>
+            <button onclick="placeOrder('{{ item[1] }}', {{ item[2] }})">Beställ</button>
         </li>
-        <li>
-            <span>HeroBurger - 95kr</span>
-            <button>Beställ</button>
-        </li>
-        <li>
-            <span>CutieVeggie - 75kr</span>
-            <button>Beställ</button>
-        </li>
+        {% endfor %}
     </ul>
 </div>
 

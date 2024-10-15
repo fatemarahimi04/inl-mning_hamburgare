@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect('menu.db')
+conn = sqlite3.connect('MenuStore/menu.db')
 cursor = conn.cursor()
 
 #skapa en tabel först
