@@ -15,3 +15,4 @@ De svårigheter som vi stötte på var mesta dels samarbetet i gruppen. Vi alla 
 Nu blev det väldigt dåligt med denna projekt eftersom det syns inte så mycket samarbete i denna projekt och det ser mest ut som att det bara är jag som har gjort allt men om man kikar på den tidigare projektet så finns det commits från alla tre i gruppen.
 Till nästa gång ska jag se till att organisera mappar, filer och kod så jag inte bara skriver massa och dessutom ska jag läsa på innan jag testar någon kommando eller funktioner.
 
+Jag kan med gott samvete säga att html var det som var mer intressant och roligt för mig. Det var lät att förstå och jobba med men med tanke på hur mycket vi behövde göra efter olyckan som hände(merge) så kunde vi inte fixa till det snyggt och prydlingt. 
