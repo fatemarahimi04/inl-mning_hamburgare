@@ -33,7 +33,7 @@ def addOptions(url, options):
     return url
 
 def sendToKitchen(order):
-    requrl = 'http://localhost:5001/order' 
+    requrl = 'http://localhost:5001/' 
     
     print('Using KitchenView URL: ' + requrl)
     
@@ -60,3 +60,4 @@ def place_order():
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000) 
+
