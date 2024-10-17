@@ -80,13 +80,25 @@
         }
     </style>
     <script>
-        function placeOrder(itemName, itemPrice) {
+        function placeOrder(event, itemName, itemPrice) {
+            event.preventDefault();
+
+            // Samla alla valda (bortvalda) ingredienser
+            const excludedIngredients = [];
+            const checkboxes = document.querySelectorAll(`input[name="${itemName}-ingredients"]:checked`);
+            checkboxes.forEach((checkbox) => {
+                excludedIngredients.push(checkbox.value);
+            });
+
+            // Skapa beställningsdata
             const order = {
                 name: itemName,
-                price: itemPrice
+                price: itemPrice,
+                exclusions: excludedIngredients
             };
 
-            fetch('/order', {
+            // Skicka beställningen med fetch
+            fetch('/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -94,7 +106,9 @@
                 body: JSON.stringify(order)
             })
             .then(response => response.json())
-            .then(data => alert(data.message))
+            .then(data => {
+                alert(data.message);  // Pop-up alert för bekräftelse
+            })
             .catch(error => console.error('Error:', error));
         }
     </script>
@@ -105,16 +119,26 @@
     <h1>Välkommen till DEVIL BURGER</h1>
     <h3>Beställ din dröm-burgare och NJUT!</h3>
 </header>
-
+<p>Vänligen kryssa det du INTE vill ha!</p>
 <div class="container">
     <h2>Meny</h2>
     <ul class="burger-menu">
-        <!-- Loopar genom menyposterna -->
+        <!-- Loopa genom menyposterna och skapa ingredienschecklistor -->
         {% for item in menu_items %}
         <li>
             <span>{{ item[1] }} - {{ item[2] }}kr</span>
             <small>{{ item[3] }}</small>
-            <button onclick="placeOrder('{{ item[1] }}', {{ item[2] }})">Beställ</button>
+
+            <form onsubmit="placeOrder(event, '{{ item[1] }}', {{ item[2] }})">
+                <!-- Ingredienscheckboxar -->
+                {% for ingredient in item[3].split(', ') %}
+                <label>
+                    <input type="checkbox" name="{{ item[1] }}-ingredients" value="{{ ingredient }}"> {{ ingredient }}
+                </label>
+                {% endfor %}
+
+                <button type="submit">Beställ</button>
+            </form>
         </li>
         {% endfor %}
     </ul>
