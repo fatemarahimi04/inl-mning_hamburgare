@@ -1,70 +1,23 @@
-My engineering diary for the "Burgerorderer" project
-project overview: 
-name of the project: Burger orderer
-course: PA1489
-Team members: [Masumeh, Rezvaneh, Fatema]
-The BurgerOrderer project aims to create a system for ordering burgers, integrating both a web client for customers to place
-orders and a kitchen client for managing those orders.This dual functionality will enhance the overall user experience, making
-it seamless for customers to customize and place their orders while enabling the kitchen staff to manage and fulfill those 
-orders efficiently. 
-Version Control: We decided to use Git for version control to track changes and facilitate collaboration. We set up a 
-repository on [insert Git hosting platform, e.g., GitHub] to store our code and documentation.
-Development Environment: After discussing various IDEs, we settled on [insert IDE name, e.g., Visual Studio Code] due to its 
-richfeatures and ease of use.
-2. Collaboration and Configuration Management
-Week 1: Team Formation and Initial Setup
-During the first week, we focused on team formation and establishing our development environment. We held an initial meeting 
-to discuss our project goals, individual responsibilities, and how we would manage our workflow.
+My Engineering Diary for the "Burgerorderer" Project
 
-Team Roles: Each member was assigned specific responsibilities:
+Project Overview
 
-[Fatema]: Frontend development (Web client).
-[Rezvaneh]: Backend development (API and database management).
-[Masumeh]: Documentation and testing.
-Repository Setup: We created the Git repository, ensuring that all team members had access. The repository structure included
-folders for the frontend, backend, and documentation.
+Project Name: Burger Orderer
+Course: PA1489
+Team Members: Masumeh, Rezvaneh, Fatema
 
-First Commit: We made our first commit with a basic folder structure and a README file outlining the project's goals and setup 
-instructions.
+We started by forming our development team. We agreed on how we would collaborate and communicate effectively throughout the project, deciding to use regular meetings to discuss progress and issues.
 
-Reflections
-Git Usage: We practiced essential Git commands such as git init, git add, and git commit -m "Initial commit". 
-This hands-on experience helped us understand version control better.
-Challenges: Some team members faced difficulties setting up their Git accounts and configuring their local environments. 
-To address this, we organized a workshop to walk everyone through the setup process, which proved invaluable.
-Learning: We realized the importance of ensuring that every team member is comfortable with the tools we're using to promote
-a smooth workflow.
-3. Implementation and Documentation
-Week 2: Database Structure and Docker Implementation
-In the second week, we shifted our focus towards implementation. We discussed and designed the database schema for our menu 
-and orders.
+We chose to set up a virtual environment (venv) for our project to avoid conflicts with any global packages, which proved beneficial in managing our dependencies efficiently. For version control, we opted to use GitHub as our git server. Each team member created an account, ensuring everyone had access to the repository.
 
-Database Design: We created an Entity-Relationship Diagram (ERD) to visualize the relationships between different entities 
+The project repository, named "BurgerOrderer," was created on GitHub, with a detailed description of the project’s goals and features. Under the Planning directory, we began listing the different product types (e.g., menus, burgers, sides, drinks) that our system would offer. Each team member was responsible for a specific product type, creating individual text files to document our ideas, which allowed us to contribute and build upon each other’s work effectively.
 
-(e.g., Burgers, Sides, Drinks, and Orders). This diagram served as a blueprint for our database setup.
+Throughout the project, I used several essential Git commands: git init to create a new local repository, git clone to clone the project repository from GitHub to my local environment, git status to check the status of changes, git add to stage changes for commit, git commit -m "message" to commit my changes with a descriptive message, and git push and git pull to send my local commits to the GitHub repository and update my local repository with changes from others.
 
-Docker Setup: To simplify deployment and ensure consistency across development environments, we created Docker files for 
+One significant challenge we encountered was a merge conflict when integrating changes from different branches, which caused the project to stop functioning properly. This situation required us to restart from scratch, which, while frustrating, allowed us to clean up our project structure and organize files more effectively.
 
-both the BurgerOrderer application and the KitchenView client. We discussed the advantages of containerization and how it 
+Given our limited programming and database experience, collaborating on the project proved challenging. We had to redo significant portions of the database and burger order functionality due to earlier merge issues. This experience underscored the importance of regularly backing up our work to avoid losing progress.
 
-helps in isolating our application’s dependencies.
+Despite the setbacks, we learned valuable lessons about collaboration and version control. Moving forward, I will focus on better organizing our project and ensuring clearer communication within the team. I will also take the time to research commands and functions before implementation to avoid confusion.
 
-Documentation: Each team member was responsible for documenting their module’s functionality. We created a shared Google 
-Drive folder for documentation, ensuring that all team members could contribute and access the latest updates.
-
-Reflections
-Challenges with Docker: Setting up Docker was initially challenging, especially for team members who had no prior experience.
-We held a few sessions to explain Docker concepts and best practices.
-Collaboration: Effective communication was key during this phase. We used tools like Slack for daily updates and scheduled
-Zoom meetings to discuss any blockers.
-Learning Experience: We gained significant insight into database design and the advantages of using Docker for modern 
-application development.
-4. Testing and Debugging
-Week 3: Testing Implementation
-As the implementation phase progressed, we began focusing on testing to ensure our application functions as expected.
-
-Test Case Development: We started writing unit tests for our API endpoints and frontend components. Each team member 
-created test cases for their respective modules, using [insert testing framework, e.g., Jest for JavaScript or Pytest for Python].
-
-Debugging Sessions: We held debugging sessions to troubleshoot issues as they arose. This collaborative effort was crucial in
-identifying and resolving bugs quickly.
+This project highlighted the importance of teamwork and the need for a structured approach to software development. Although we faced challenges, these experiences provided an excellent opportunity for growth and understanding in software engineering principles.
