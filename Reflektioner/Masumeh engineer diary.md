@@ -19,3 +19,4 @@ On a more positive note, working with HTML was one of the highlights for us. It 
 
 It was responsible for writing the drink menu. I wrote it in a way that it should communicte well and clearly with the client. The menu contains which drinks we have available, their names and the price of them. but the most important thing for me was thst the customer should be able to easily find their drink and it should work well. 
 
+
