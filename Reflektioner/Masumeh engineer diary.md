@@ -17,3 +17,5 @@ Our project did not go well because there was not much cooperation. I was consta
 
 On a more positive note, working with HTML was one of the highlights for us. It was relatively simple and enjoyable to customize. Unfortunately, due to the merge issues, we didn’t have enough time to polish the final design as much as we would have liked.
 
+It was responsible for writing the drink menu. I wrote it in a way that it should communicte well and clearly with the client. The menu contains which drinks we have available, their names and the price of them. but the most important thing for me was thst the customer should be able to easily find their drink and it should work well. 
+
