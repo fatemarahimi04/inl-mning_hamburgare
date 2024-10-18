@@ -22,13 +22,13 @@ The second week marked a shift to development. We worked on designing the databa
 
 We also began implementing Docker to containerize our project, ensuring consistency across all development environments. Setting up Docker presented a steep learning curve for some of the team, but after organizing a few sessions to explain the concepts, we overcame the initial challenges. Communication was crucial in this phase, as we relied on Slack and Zoom for daily updates and solving issues as they arose.
 
-Week 3: Drink Menu Development and Testing
+Week 3: Drink Menu Development
 
 My primary responsibility was developing the drinks menu. I aimed to create a user-friendly interface with HTML and CSS, ensuring customers could easily browse drink options. Each drink was displayed with a description and price, and I made sure the interface aligned with the broader design of the application.
 
 On the backend, I worked to ensure dynamic updates, meaning that any changes to the drink offerings would automatically reflect on the user interface. This involved connecting the menu to the database, a process that required close collaboration with Rezvaneh, who was developing the sides menu. We focused on ensuring the menus worked smoothly together for a seamless customer experience.
 
-Integrating the drinks menu with the backend brought several challenges, particularly in retrieving data accurately from the database. Debugging was a slow but ultimately successful process, and through teamwork, we resolved the issues to get the menu functioning correctly.
+Integrating the drinks menu with the backend brought several challenges, particularly in retrieving data accurately from the database. Through teamwork, we resolved the issues to get the menu functioning correctly.
 
 Reflections:
 
