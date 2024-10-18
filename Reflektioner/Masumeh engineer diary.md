@@ -1,9 +1,5 @@
 My Engineering Diary: "BurgerOrderer" Project
 
-Project Name: BurgerOrderer
-
-Course: PA1489
-
 Team Members: Fatema, Rezvaneh, Masumeh
 
 Objective:
