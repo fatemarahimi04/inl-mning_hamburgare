@@ -9,7 +9,7 @@ Week 1: Initial Setup and Team Formation
 
 During the first week, our focus was on setting up the project environment and dividing responsibilities among the team. We created a virtual environment (venv) to isolate dependencies, which helped ensure a smooth development process without conflicts. After discussing different tools, we decided to use Visual Studio Code as our integrated development environment (IDE) due to its simplicity and versatility.
 
-We then created the core file, app.py, and found an HTML template for the homepage. Customizing the header and footer (pink and black) was an early step in defining our project's visual identity. Each team member also took ownership of a specific part of the menu:
+We then created the core file, app.py, and found an HTML template for the homepage. Customizing the header and footer was an early step in defining our project's visual identity. Each team member also took ownership of a specific part of the menu:
 
 Fatema: Hamburgers
 
