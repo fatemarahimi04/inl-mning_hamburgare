@@ -12,8 +12,11 @@ During the first week, our focus was on setting up the project environment and d
 We then created the core file, app.py, and found an HTML template for the homepage. Customizing the header and footer (pink and black) was an early step in defining our project's visual identity. Each team member also took ownership of a specific part of the menu:
 
 Fatema: Hamburgers
+
 Rezvaneh: Sides
+
 Masumeh (my role): Drinks
+
 Version control was handled using Git, where we created a repository to store our code and track changes. Basic Git commands like git init, git clone, and git status were used frequently to monitor updates and ensure all members stayed in sync.
 
 Week 2: Database Structure and Implementation
