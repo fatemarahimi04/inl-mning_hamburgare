@@ -14,4 +14,6 @@ The difficulties we encountered were mostly related to collaboration within the 
 
 Now, this project turned out very poorly because it doesn't show much collaboration, and it looks like I did everything myself. However, if you look at the previous project, there are commits from all three members of the group. Next time, I will make sure to organize folders, files, and code so I don’t just write a lot of random stuff, and I will also read up before trying any commands or functions.
 
-Jag kan med gott samvete säga att html var det som var mer intressant och roligt för mig. Det var lät att förstå och jobba med men med tanke på hur mycket vi behövde göra efter olyckan som hände(merge) så kunde vi inte fixa till det snyggt och prydlingt. 
+I encountered errors that said 'no module found' even though I had the module installed. I realized that my computer or the VS Code environment itself might need to be restarted.
+
+I had trouble opening the webpage because I got an address to go to, but I realized that it’s not possible to open both webpages with the same address. So, I changed the Flask port for the kitchen view to 5001 to get a new address.
