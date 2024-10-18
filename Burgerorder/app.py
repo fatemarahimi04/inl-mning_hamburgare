@@ -65,15 +65,13 @@ import requests
 
 app = Flask(__name__)
 
-# Koppla till databasen
 def get_db_connection():
     conn = sqlite3.connect('C:/Users/fatem/Desktop/Inlämning Hamburgare/inl-mning_hamburgare/MenuStore/menu.db')
     conn.row_factory = sqlite3.Row
     return conn
 
-# Skicka beställning till köket
 def sendToKitchen(order):
-    requrl = 'http://localhost:5001/order'  # Uppdatera URL om du vill ha den utan /order
+    requrl = 'http://localhost:5001/order'  
     print('Using KitchenView URL: ' + requrl)
 
     response = requests.post(requrl, json=order)
@@ -85,11 +83,10 @@ def sendToKitchen(order):
 
     return response
 
-# Hantera GET (meny) och POST (beställning) på samma route
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        order = request.json  # Ta emot beställningsdata som skickas via JSON
+        order = request.json  
 
         burger_name = order.get('name')
         price = order.get('price')
@@ -97,7 +94,6 @@ def index():
 
         order_details = f"{burger_name} utan {', '.join(exclusions)}" if exclusions else burger_name
 
-        # Skicka beställningen till köket
         sendToKitchen({
             'name': order_details,
             'price': price
@@ -105,7 +101,6 @@ def index():
 
         return jsonify({'message': 'Order sent successfully!'}), 200
 
-    # Hämta menyposter från databasen
     conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM menu_items')
