@@ -1,5 +1,4 @@
 from flask import Flask, request, render_template
-from app_kitchen import app
 app = Flask(__name__)
 
 orders = []

@@ -1,5 +1,5 @@
 import unittest
-from app_kitchen import app  # Importera kitchen view-appen
+from app_kitchen import app 
 
 class KitchenViewTestCase(unittest.TestCase):
     def setUp(self):
@@ -16,7 +16,7 @@ class KitchenViewTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_invalid_method(self):
-        response = self.app.get('/order')  # Försök med GET istället för POST
+        response = self.app.get('/order') 
         self.assertEqual(response.status_code, 405)
 
 if __name__ == '__main__':
