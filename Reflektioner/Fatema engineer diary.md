@@ -17,3 +17,12 @@ Now, this project turned out very poorly because it doesn't show much collaborat
 I encountered errors that said 'no module found' even though I had the module installed. I realized that my computer or the VS Code environment itself might need to be restarted.
 
 I had trouble opening the webpage because I got an address to go to, but I realized that it’s not possible to open both webpages with the same address. So, I changed the Flask port for the kitchen view to 5001 to get a new address.
+
+I created a new file named burger_test.py and test_kitchenview.py there I'll write my codes.
+
+I used unittest and Flask's test client to sent request to my endpoints and controlled that it anwsered correctly.
+ 
+ I checked if the application returned the correct  HTTP status codes.
+
+My test did'n work because it returned "no module named flask", I checked burger_test.py file which URL is used in the test for the POST request. It should match the URL in the application that handles orders.
+
