@@ -15,4 +15,18 @@ To structure the tests in the kitchen application so we used unittest and create
 
 We then used post ang get methods to send POST ang GET request to the different API endpoints. To verify that the server handled the data correctly we used asserEqual and assert to compare actual results with expected ones. For example, we checked that the server responded with correct status codes and that specific messages were returned accurately.
 
-The first idea was to test opening a menu where the customer coild choose to remove ingredients they didn't want from the item. This was a bit too advanced for us beacuse it required JavaScript, whick we weren't very familiar with. We changed 
+The first idea was to test opening a menu where the customer coild choose to remove ingredients they didn't want from the item. This was a bit too advanced for us beacuse it required JavaScript, whick we weren't very familiar with. We changed our approach to something simpler and more efficent. Instead of that we decided to list ingredients next to each item using checkboxes, allowing the customer to uncheck ingredients they didn't wannt. We retrieved the list of ingredients from our database and then sent the information in a form using the POST method to the kitchenview. To make it functional for testing we decided to wrote a simple HTML setup as the assignmeny mentioned that functionality was more important than visualization. 
+
+In the burger application, we bagan by testing the / endpoint:
+- For the GET request in the test_index_get test we confirmed that    the home page was accessible and responded with status code 200.
+- For the POST request, in the test_order_post test we sent an order in JSON format that included details about the burger (name, price and excluded ingredients). We checked that the server responded with status code 200 and returned the message 'Order sent successfully!'
+
+Next step was testing the kitchen application's /order endpoint:
+- Using POST in test_receive_order, we sent a similar order and confirmed that the server responded with status code 200.
+-We also tested GEt request to /order in test_invalid_method to ensure that this endpoint only accepts POST requests. When we sent a GET request we expected and received a status code of 405 (Method Not Allowed) clearly indicating that the method was not allowed here.
+
+Additionally to avoid port conflicts, we assigned port 5000 to the burgerorderer and port 5001 to the kitchenview allowing both to run simultaneously. We realized this was necessery after initially trying to run both on port 5000 which didn't work. Sometimes when running multiple processes in the terminal it would freeze and stop working, a quick restart of VS Code solved the issue. Another minor challenge was encountering a "no module found" error, even though the module was installed in the enviroment.
+
+ Through these tests, we confirmed that the applications correctly handled both order functions and methos restrictions. All requests returned expected responses and we confirmed that the applications could manage incorrect methods (such as GET on /order) and give proper feedback to the user. We also learned a valueble lesson that even small changes in one file can significantly impact other parts if the code in diffrent files which was crucial for understanding how interconnected our setup is.
+
+ 
