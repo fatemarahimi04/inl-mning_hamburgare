@@ -54,3 +54,10 @@ Despite the challenges, my work on the drinks menu provided valuable lessons in 
 We also encountered various technical problems, such as module installation errors and inconsistencies with the Flask application. To address issues with the kitchen view, we had to change the Flask port to 5001 to resolve the problem with displaying the webpage.
 
 Though the project faced setbacks, the experience has taught us to better manage version control, communication, and backup processes for future group work.
+
+I made the second step of our debug-session and this is how it went...
+During the session, I used the following debugging tools:
+- Continue: Used to resume program execution after checking each breakpoint to confirm that variables and SQl queries function as expected.
+- Step over: Used to skip over minor funktions that dont impact database queries but are part os the menu logic flow.
+- Step into: Used to step into specific funktions especially the funktion that handles retrieving menu items from the database.
+- Step out: Used after confirming that a specific functions (e.g, fetching menu data) operates cerrectly to return to the main applications flow.

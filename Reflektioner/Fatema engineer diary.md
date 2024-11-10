@@ -26,3 +26,25 @@ I used unittest and Flask's test client to sent request to my endpoints and cont
 
 My test did'n work because it returned "no module named flask", I checked burger_test.py file which URL is used in the test for the POST request. It should match the URL in the application that handles orders.
 
+We tested run pip show flask and it says that flask is installed but wee tried to install again with pip install flask. 
+
+We ran the code and now it returned HTTP-stauscode 404 (not found) instead of 200 (OK). 
+
+In the test, a POST request is sent to /order. This route exists in app.py and wee have set up a POST method for /order. 
+
+After running the code we got another error, we tried to import app from app_kitchen and python cannot perform this import.
+
+I took the reponsibility of the third and fourth step of the debug-session...
+To track data flow and ensure everything works correctly, I monitored the following vvariables:
+- conn: ensures that the database connection opens correctly.
+- items: this variable stores the menu items retrieved from database and I check that it has the expected values after the SQL query runs. At this point in the code, items shoukd contain five entries matching the manu items added to the database.
+
+To monitor items I added it to the variable watch in the debugger. I can see when the value changes after the SQL query runs, ensuring that it retrieves the correct data.
+
+Variable Monitoring Results
+- Intial Value: items is None before the SQL query is executed.
+- After SQL Query: items contains five items as expected: a bacon burger, a chicken burger, a veggie burger, fries and a drink. 
+
+I observed when the value of items changed and verified that it fetched the correct data. If items had fewer that five items it would indicate an issue with the database query.
+
+I t

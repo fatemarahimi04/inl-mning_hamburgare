@@ -60,3 +60,10 @@ Documentation:
 We often forgot to document our progress and decisions. This made it difficult to keep track of what we had done and what solutions we had implemented, leading to unnecessary confusion later in the project.
 Reflection
 These difficulties were educational and helped us grow both individually and as a team. We learned the importance of communication, planning and being flexible in our way of working. Overcoming these challenges has made us more coordinated and knowledgeable, which we can take with us to future projects
+
+To identify any issues with retrieving or displaying menu items from the database, I set breakpoints at key location in the code:
+- At the database connection code to confirm that the database opens correctly.
+- In the SQL query that retrieves menu items to ensure that correct data is fetched.
+- At the part of the code where the menu items are displayed to the user to verify that the data from the database is passed to the application as expected.
+
+These breakpoints are set in the file menyskapare.py as this file handles the database interactions and menu retrieval. 

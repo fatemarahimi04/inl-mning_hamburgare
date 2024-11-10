@@ -8,7 +8,6 @@ The first idea was to test opening a menu where the customer could choose to rem
 Flask uses port 5000 and to avoid conflicts, I assigned port 5000 to the burger orderer and port 5001 to the kitchen view. I did this to have two web pages I could work on. I realized this when I tried running both the burger orderer and kitchen view in port 5000, which didn´t work. Sometimes, when I ran too many things in the terminal it froze and stopped working and the easy solution was to restart VS code. An example is that I had the module installed in my environment, ye I still received a “no module found” error, even though it was installed. 
 We learned a big lesson that even the smallest change in one file can have a significant impact on other parts of the code in different files. 
 
-
 In our tests for the burger and kitchen applications we focuced on ensuring that the functionality worked as expected and that communication between the interfaces was correct. We used modules such as json to format data into JSON and app from both app and app_kitchen t initiate the Flask test clients. This allowed us to simulate HTTP request in a controlled test enviroment. 
 
 To structure the tests in the kitchen application so we used unittest and created a test class called KitchenViewTestCase which provided an organized and efficient way to set up and run our test cases. Inside this class we used the setUp() method to initialize the test client before each test case ran, ensuring that each specific function was tested in an isolated enviroment. 
@@ -28,5 +27,4 @@ Next step was testing the kitchen application's /order endpoint:
 Additionally to avoid port conflicts, we assigned port 5000 to the burgerorderer and port 5001 to the kitchenview allowing both to run simultaneously. We realized this was necessery after initially trying to run both on port 5000 which didn't work. Sometimes when running multiple processes in the terminal it would freeze and stop working, a quick restart of VS Code solved the issue. Another minor challenge was encountering a "no module found" error, even though the module was installed in the enviroment.
 
  Through these tests, we confirmed that the applications correctly handled both order functions and methos restrictions. All requests returned expected responses and we confirmed that the applications could manage incorrect methods (such as GET on /order) and give proper feedback to the user. We also learned a valueble lesson that even small changes in one file can significantly impact other parts if the code in diffrent files which was crucial for understanding how interconnected our setup is.
-
  
