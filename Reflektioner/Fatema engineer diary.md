@@ -47,4 +47,14 @@ Variable Monitoring Results
 
 I observed when the value of items changed and verified that it fetched the correct data. If items had fewer that five items it would indicate an issue with the database query.
 
-I t
+
+
+I tested various scenarios to ensure the system behaves correctly in different situations:
+- Ordering a different menu item: I selected a different menu item and verified that the correct information was retrieved.
+- Canceling an order mid-way: I canceled mid-way through an order to see how variables and the database connection were handled.
+
+Observations
+Code executed: Depending on the selected menu item different objects are retrieved from the database and items is updated accordingly. If I canceled no information was saved and the database connection closed as expected.
+Impact on variables: The variable items updated correctly based on the selected menu item. When canceling an order the database connection remains intact until exiting, which is expected.
+
+
